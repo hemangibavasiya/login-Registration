@@ -1,0 +1,37 @@
+form(method="post" action="/reset")
+    table
+        tr
+            td email
+            td
+                input(type="email" name="email")
+        tr 
+            td password
+            td
+                input(type="password" name="password" pattern="(?=^.{8,}$)(?=.*\\d)(?=.*[!@#$%^&*]+)(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$")
+        tr
+            td
+            td Password must have
+        tr
+            td
+            td 1 numeric character
+        tr
+            td
+            td 1 uppercase alphabetical character
+        tr
+            td
+            td 1 lowercase alphabetical characte
+        tr
+            td
+            td 1 special character
+        tr
+            td
+            td length should be at least 8
+
+        tr
+            td confirm password
+            td
+                input(type="password" name="confirm-password")
+        tr
+            td
+            td 
+                input(type="submit" value="Reset")

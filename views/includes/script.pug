@@ -1,0 +1,34 @@
+script.
+    $(document).ready(function() {
+        $('.password-field input').keyup( function() {
+            var strength = checkPasswordStrength($(this).val());
+            var $outputTarget = $(this).parent('.password-field');
+    
+            $outputTarget.removeClass(function (index, css) {
+                return (css.match (/\level\S+/g) || []).join(' ');
+            });
+    
+            $outputTarget.addClass('level' + strength);
+        });
+    });
+
+    function checkPasswordStrength(password) {
+        var strength = 0;
+  
+        // If password is 6 characters or longer
+        if (password.length >== 8) {
+            strength += 1;
+        }
+
+        // If password contains both lower and uppercase characters, increase strength value.
+        if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
+            strength += 1;
+        }
+
+        // If it has numbers and characters, increase strength value.
+        if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) {
+            strength += 1;
+        }
+
+        return strength;
+    }

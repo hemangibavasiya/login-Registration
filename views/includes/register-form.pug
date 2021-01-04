@@ -1,0 +1,43 @@
+form(method="post" action="/register")
+    table
+        tr
+            td name
+            td
+                input(type="text" name="name", pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")
+        tr
+            td email
+            td
+                input(type="email" name="email")
+        tr 
+            td password
+            td.password-field
+                input(type="password" name="password" pattern="(?=^.{8,}$)(?=.*\\d)(?=.*[!@#$%^&*]+)(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$")
+
+        tr
+            td
+            td Password must have
+        tr
+            td
+            td 1 numeric character
+        tr
+            td
+            td 1 uppercase alphabetical character
+        tr
+            td
+            td 1 lowercase alphabetical characte
+        tr
+            td
+            td 1 special character
+        tr
+            td
+            td length should be at least 8
+
+                //- span.hint(password should have 1 numeric character, 1 uppercase alphabetical character, 1 lowercase alphabetical character, 1 special character and length must be more then 8)
+        tr
+            td confirm password
+            td
+                input(type="password" name="confirm-password")
+        tr
+            td
+            td 
+                input(type="submit" value="Register")
